@@ -5,32 +5,35 @@ This project sets up Prometheus with Thanos Sidecar using Docker and Docker Comp
 
 ## Table of Contents
 
-1. [Prerequisites](#prerequisites)
-   - [Docker](#docker)
-   - [Docker Compose](#docker-compose)
-   - [Go (Golang)](#go-golang)
-   - [Python](#python)
-   - [Visual Studio Code](#visual-studio-code)
-   - [Git](#git)
-   - [Other Tools and Extensions](#other-tools-and-extensions)
-2. [Project Structure](#project-structure)
-3. [Getting Started](#getting-started)
-   - [Clone the Repository](#clone-the-repository)
-   - [Build the Docker Image](#build-the-docker-image)
-   - [Start the Services](#start-the-services)
-   - [Verify the Setup](#verify-the-setup)
-   - [Access Prometheus](#access-prometheus)
-   - [Thanos Object Storage Configuration](#thanos-object-storage-configuration)
-   - [Stopping the Services](#stopping-the-services)
-4. [File Details](#file-details)
-   - [Dockerfile](#dockerfile)
-   - [docker-compose.yml](#docker-composeyml)
-   - [prometheus.yml](#prometheusyml)
-5. [Troubleshooting](#troubleshooting)
-   - [Permission Denied Errors](#permission-denied-errors)
-   - [Thanos Object Storage Configuration](#thanos-object-storage-configuration-1)
-6. [Contributing](#contributing)
-7. [License](#license)
+- [Prometheus and Thanos Sidecar Setup](#prometheus-and-thanos-sidecar-setup)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+    - [1. Docker](#1-docker)
+    - [2. Docker Compose](#2-docker-compose)
+    - [3. Go (Golang)](#3-go-golang)
+    - [4. Python](#4-python)
+    - [5. Visual Studio Code](#5-visual-studio-code)
+    - [6. Git](#6-git)
+    - [7. Other Tools and Extensions](#7-other-tools-and-extensions)
+  - [Project Structure](#project-structure)
+  - [Getting Started](#getting-started)
+    - [1. Clone the Repository](#1-clone-the-repository)
+  - [Project Structure](#project-structure-1)
+    - [2. Build the Docker Image](#2-build-the-docker-image)
+    - [3. Start the Services](#3-start-the-services)
+    - [4. Verify the Setup](#4-verify-the-setup)
+    - [5. Access Prometheus](#5-access-prometheus)
+    - [6. Thanos Object Storage Configuration](#6-thanos-object-storage-configuration)
+    - [7. Stopping the Services](#7-stopping-the-services)
+  - [File Details](#file-details)
+    - [Dockerfile](#dockerfile)
+    - [docker-compose.yml](#docker-composeyml)
+    - [prometheus.yml](#prometheusyml)
+  - [Troubleshooting](#troubleshooting)
+    - [Permission Denied Errors](#permission-denied-errors)
+    - [Thanos Object Storage Configuration](#thanos-object-storage-configuration)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Prerequisites
 
@@ -181,6 +184,5 @@ If you find issues or have suggestions, feel free to open an issue or submit a p
 
 ## License
 
-This project is licensed under the MIT License.
 
 This `README.md` provides clear instructions for setting up and running Prometheus and Thanos Sidecar using Docker Compose, including troubleshooting tips and configuration details.
