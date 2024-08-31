@@ -2,6 +2,36 @@
 
 This project sets up Prometheus with Thanos Sidecar using Docker and Docker Compose. The setup ensures that Prometheus metrics can be shipped and stored in long-term storage using Thanos.
 
+
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+   - [Docker](#docker)
+   - [Docker Compose](#docker-compose)
+   - [Go (Golang)](#go-golang)
+   - [Python](#python)
+   - [Visual Studio Code](#visual-studio-code)
+   - [Git](#git)
+   - [Other Tools and Extensions](#other-tools-and-extensions)
+2. [Project Structure](#project-structure)
+3. [Getting Started](#getting-started)
+   - [Clone the Repository](#clone-the-repository)
+   - [Build the Docker Image](#build-the-docker-image)
+   - [Start the Services](#start-the-services)
+   - [Verify the Setup](#verify-the-setup)
+   - [Access Prometheus](#access-prometheus)
+   - [Thanos Object Storage Configuration](#thanos-object-storage-configuration)
+   - [Stopping the Services](#stopping-the-services)
+4. [File Details](#file-details)
+   - [Dockerfile](#dockerfile)
+   - [docker-compose.yml](#docker-composeyml)
+   - [prometheus.yml](#prometheusyml)
+5. [Troubleshooting](#troubleshooting)
+   - [Permission Denied Errors](#permission-denied-errors)
+   - [Thanos Object Storage Configuration](#thanos-object-storage-configuration-1)
+6. [Contributing](#contributing)
+7. [License](#license)
+
 ## Prerequisites
 
 - Before you start, ensure you have the following software installed:
@@ -69,12 +99,6 @@ Git is a version control system that lets you manage and keep track of your sour
 ## Getting Started
 
 ### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-repo/prometheus-thanos-setup.git
-cd prometheus-thanos-setup
-```
-
 
 ## Project Structure
 
