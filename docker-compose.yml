@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.43.0
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.min-block-duration=2h
+      - --storage.tsdb.max-block-duration=2h
+    networks:
+      - thanos-network
+
+  thanos-sidecar:
+    image: thanosio/thanos:v0.35.1
+    container_name: thanos-sidecar
+    ports:
+      - "19190:19190"
+    command:
+      - sidecar
+      - --prometheus.url=http://prometheus:9090
+      - --objstore.config-file=/etc/thanos/bucket.yaml
+      - --http-address=0.0.0.0:19190
+      - --grpc-address=0.0.0.0:19090
+      - --tsdb.path=/prometheus
+    volumes:
+      - ./bucket.yaml:/etc/thanos/bucket.yaml
+      - prometheus_data:/prometheus
+    networks:
+      - thanos-network
+
+networks:
+  thanos-network:
+    driver: bridge
+
+volumes:
+  prometheus_data:

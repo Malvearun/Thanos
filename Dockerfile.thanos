@@ -1,0 +1,27 @@
+# Dockerfile.thanos
+FROM golang:1.23 AS builder
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the Go modules manifests and download dependencies
+COPY thanos/go.mod thanos/go.sum ./
+RUN go mod download
+
+# Copy the source code into the container
+COPY thanos/ .
+
+# Build the Thanos binary
+RUN go build -o thanos ./cmd/thanos
+
+# Start a new stage from scratch
+FROM alpine:3.18
+
+# Copy the Thanos binary from the builder stage
+COPY --from=builder /app/thanos /bin/thanos
+
+# Ensure the binary is executable
+RUN chmod +x /bin/thanos
+
+# Set the entrypoint
+ENTRYPOINT ["/bin/thanos"]
