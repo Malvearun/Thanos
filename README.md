@@ -156,6 +156,5 @@ If you find issues or have suggestions, feel free to open an issue or submit a p
 
 ## License
 
-This project is licensed under the MIT License.
 
 This `README.md` provides clear instructions for setting up and running Prometheus and Thanos Sidecar using Docker Compose, including troubleshooting tips and configuration details.
