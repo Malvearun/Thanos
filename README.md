@@ -71,8 +71,7 @@ Git is a version control system that lets you manage and keep track of your sour
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/prometheus-thanos-setup.git
-cd prometheus-thanos-setup
+git clone https://github.com/Malvearun/Thanos.git
 ```
 
 
