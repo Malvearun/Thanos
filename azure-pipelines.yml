@@ -9,15 +9,22 @@ trigger:
 pool:
   vmImage: default
 
+variables:
+  system.debug: true
     
+stages:
+  - stage: test
+    displayName: test
+    jobs:
+    - job: test
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+      steps:
+      - script: echo Hello, world!
+        displayName: 'Run a one-line script'
 
-- task: DeleteFiles@1
-  inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)/temp'
-  displayName: Delete files
-  condition: always()
-
+      - task: DeleteFiles@1
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)/temp'
+        displayName: Delete files
+        condition: always()
+    
