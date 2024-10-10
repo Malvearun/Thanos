@@ -7,7 +7,7 @@ trigger:
 - none
 
 pool:
-  vmImage: default
+  vmImage: 'Default'
 
 variables:
   system.debug: true
