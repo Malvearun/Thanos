@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+pool:
+  vmImage: default
+  demands:
+    agent.name - equals DESKTOP-QCO0LVV
+    
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)/temp'
+  displayName: Delete files
+  condition: always()
+
