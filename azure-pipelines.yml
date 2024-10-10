@@ -8,8 +8,7 @@ trigger:
 
 pool:
   vmImage: default
-  demands:
-    agent.name -equals 'DESKTOP-QCO0LVV'
+
     
 
 steps:
